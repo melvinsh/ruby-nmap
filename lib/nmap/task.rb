@@ -52,6 +52,7 @@ module Nmap
   # ### Port Specification and Scan Order:
   #
   # * `-p` - `nmap.ports`
+  # * `--exclude-ports` - `nmap.exclude_ports`
   # * `-F` - `nmap.fast`
   # * `-r` - `nmap.consecutively`
   # * `--top-ports` - `nmap.top_ports`
@@ -220,6 +221,11 @@ module Nmap
 
     # PORT SPECIFICATION AND SCAN ORDER:
     short_option :flag => '-p', :name => :ports do |opt,value|
+      unless value.empty?
+        [opt.flag, format_ports(value)]
+      end
+    end
+    long_option :flag => '--exclude-ports' do |opt,value|
       unless value.empty?
         [opt.flag, format_ports(value)]
       end
