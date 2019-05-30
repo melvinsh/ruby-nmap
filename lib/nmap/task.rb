@@ -307,7 +307,6 @@ module Nmap
 
     # Verbosity and Debugging:
     short_option :flag => '-v', :name => :verbose
-    short_option :flag => '-v0', :name => :quiet
     short_option :flag => '-d', :name => :debug
     long_option :flag => '--reason', :name => :show_reason
     long_option :flag => '--stats-every'
