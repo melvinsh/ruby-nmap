@@ -339,7 +339,7 @@ module Nmap
     short_option :flag => '-h', :name => :help
 
     non_option :tailing => true, :name => :targets
-    non_option :leading => true, :flag => 'v0'
+    non_option :leading => true, :quiet => :quiet
 
     private
 
